@@ -6,7 +6,6 @@ import glob
 
 import pandas as pd
 
-# are any of the campaigns refunding all dbls
 
 candidates = ["romney", "obama", "mccain", "trump", "clinton"]
 
@@ -27,9 +26,6 @@ def main():
 	for cand in candidate_data:
 		this_cand = candidate_data[cand]
 		try:
-		# negative_count = this_cand['negatives']
-		# if this_cand['negatives'] > this_cand['positivedbl']:
-			# negative_count = this_cand['positivedbl']
 			this_cand['primary_max_donors_count'] = this_cand['positivemax_primary'] - this_cand['positivedbl_general'] + this_cand['positivedbl_primary'] - this_cand['negatives_dbl_primary']
 			this_cand['general_max_donors_count'] = this_cand['positivemax_general'] - this_cand['positivedbl_primary'] + this_cand['positivedbl_general'] - this_cand['negatives_dbl_general']
 			this_cand['total_max_donors_count'] = this_cand['general_max_donors_count'] + this_cand['primary_max_donors_count']
@@ -55,7 +51,6 @@ def analyze_csv(csv_path, year_maxes):
 	orig_df = pd.read_csv(csv_path)
 
 	# filter to just indv contributions
-	# IS THERE ANYTHING ELSE WE NEED TO FITLER TO? 
 	is_indv_df = orig_df[orig_df["is_individual"] == "t"]
 
 

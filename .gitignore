@@ -1,0 +1,11 @@
+lib/
+share/
+include/
+etc/
+bin/
+METHOD*
+*.DS_Store*
+.Python
+pip-selfcheck.json
+*.xlsx
+get_data.py
